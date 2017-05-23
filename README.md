@@ -1,3 +1,2 @@
-# Project name
-* additional information
-* license
+# OOP
+* objects, classes

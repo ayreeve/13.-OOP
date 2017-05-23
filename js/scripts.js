@@ -1,4 +1,6 @@
 // jslint devel: true
+
+// objects, classes
 function Phone(brand, price, color, origin) {
     this.brand = brand;
     this.price = price;
@@ -26,3 +28,22 @@ var SamsungGalaxyS6 = new Phone('Samsung', 2050, 'white', 'ROK');
 iPhone6S.printInfo();
 SamsungGalaxyS6.printInfo();
 iPhone6S.lowerPrice();
+
+// this, self
+function Button(text) {
+    this.text = text || ' Hello';
+}
+
+Button.prototype = {
+    create: function () {
+        var self = this;
+        this.$element = $('<button>');
+        this.$element.text(this.text);
+        this.$element.click(function () {
+            alert(self.text);
+        });
+        $('body').append(this.$element);
+    }
+}
+var btn1 = new Button('Hello!');
+btn1.create();
